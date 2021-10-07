@@ -3,7 +3,6 @@ var marks = 0;
 
 //btn
 var btnStart = document.getElementById("link-start");
-var btnScore = document.getElementById("link-score");
 
 //inner html
 var head = document.getElementById("quiz-head");
@@ -14,11 +13,6 @@ var next = document.getElementById("next");
 //btn action
 btnStart.addEventListener("click", function(){
     quizStart(1);
-});
-
-btnScore.addEventListener("click", function(){
-    head.innerHTML = `<h1>You Past Score</h1>`;
-    body.innerHTML =`<button type="button" class="btn" onclick="location.reload();">Go Back</button>`;
 });
 
 //question
