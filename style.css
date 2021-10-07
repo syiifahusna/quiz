@@ -1,0 +1,134 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+body {
+  background-color: #0096c7;
+}
+
+input[type="button"],
+button {
+  background: none;
+  outline: none;
+  border: none;
+  display: block;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.quiz-box {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 60%;
+  height: 30rem;
+  padding: 2rem;
+  background-color: #f1faee;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.quiz-box .box-head {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  color: #1d3557;
+  margin: 0.2rem 0rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #1d3557;
+  margin: 0.2rem 0rem;
+}
+
+.box-body,
+.next {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.box-body a {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.quiz-box .box-footer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  margin: 1rem 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #457b9d;
+}
+
+.btn {
+  background-color: #a8dadc;
+  color: #1d3557;
+  text-align: center;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.btn:hover {
+  background-color: #457b9d;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  color: #f1faee;
+}
+
+.btn:active,
+.btn-answer:active,
+.btn-next:active {
+  transform: translate(4px, 1px);
+}
+
+.btn-answer {
+  background-color: #2a9d8f;
+  color: #f1faee;
+  text-align: center;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.btn-answer:hover {
+  background-color: #288f83;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  color: #f1faee;
+}
+
+.btn-next {
+  background-color: #b7b7a4;
+  color: #f1faee;
+  text-align: center;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.btn-next:hover {
+  background-color: #a5a58d;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  color: #f1faee;
+}
