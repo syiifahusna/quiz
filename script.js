@@ -65,55 +65,67 @@ const arrQuestion = [
     }
 ];
 
+//randomize question
+randomizeQuestion = arrQuestion.sort(function(a,b){
+    return 0.5 - Math.random();
+});
+
+
 //========================function=============================
 function quizStart(num){
     next.innerHTML = ``;
-    footer.innerHTML = `Question <span id="qnum">`+num+`</span>/4`;
+    footer.innerHTML = `Question <span id="qnum">`+num+`</span>/`+arrQuestion.length;
     num = num - 1;
 
-    //load question
+    
     if( num > (arrQuestion.length-1)){
         head.innerHTML =`<h1>You Finished The Quiz</h1><h3>You Answered `+ marks +` out of `+ arrQuestion.length +` correctly</h3>`;
         body.innerHTML =`<button type="button" class="btn" onclick="location.reload();">Menu</button>`;
         footer.innerHTML ="";
         next.innerHTML ="";
     }else{
-        questionRound(arrQuestion[num]); 
+        //load question
+        questionRound(randomizeQuestion[num]); 
     }
        
 }
 
 function questionRound(arrQuestion){
 
-   let question = `<h3>`+ arrQuestion.question+`</h3>`;
-   let answer1 = arrQuestion.answer1;
-   let answer2 = arrQuestion.answer2;
-   let answer3 = arrQuestion.answer3;
-   let answer4 = arrQuestion.answer4;
-   let correct = arrQuestion.correct;
+    let question = `<h3>`+ arrQuestion.question+`</h3>`;
+    let answer1 = arrQuestion.answer1;
+    let answer2 = arrQuestion.answer2;
+    let answer3 = arrQuestion.answer3;
+    let answer4 = arrQuestion.answer4;
+    let correct = arrQuestion.correct;
 
-   var arrAnswer = [answer1,answer2,answer3,answer4];
+    var arrAnswer = [answer1,answer2,answer3,answer4];
 
-   let text ="";
-   for(let i=0;i<arrAnswer.length;i++){
-        text = text + `<button type="button" class="btn-answer">`+ arrAnswer[i] +`</button>`;    
-   }
+    //randomize answer
+    randomizeAnswer = arrAnswer.sort(function(a,b){
+    return 0.5 - Math.random();
+    });
 
-   //display question
-   head.innerHTML= question;
-   body.innerHTML = text;
+    let text ="";
+    for(let i=0;i<arrAnswer.length;i++){
+            text = text + `<button type="button" class="btn-answer">`+ randomizeAnswer[i] +`</button>`;    
+    }
 
-   //btn answer action
-   var btnAnswer = document.getElementsByClassName("btn-answer");
-   for(let i =0; i<arrAnswer.length;i++){
-            btnAnswer[i].addEventListener("click",function(){
-            questionAnswer(btnAnswer[i],correct);
-            //change the right answer color
-            arrLocation = arrAnswer.indexOf(correct);
-            btnAnswer[arrLocation].style.backgroundColor = "#0096c7";
-        
-       });
-   }
+    //display question
+    head.innerHTML= question;
+    body.innerHTML = text;
+
+    //btn answer action
+    var btnAnswer = document.getElementsByClassName("btn-answer");
+    for(let i =0; i<arrAnswer.length;i++){
+                btnAnswer[i].addEventListener("click",function(){
+                questionAnswer(btnAnswer[i],correct);
+                //change the right answer color
+                arrLocation = arrAnswer.indexOf(correct);
+                btnAnswer[arrLocation].style.backgroundColor = "#0096c7";
+            
+        });
+    }
    
 }
 
@@ -139,7 +151,7 @@ function questionAnswer(btnAnswer,correct){
         var  questionNumber = document.getElementById("qnum").innerHTML;
         num = parseInt(questionNumber);
         num = num + 1;
-        console.log(num);
+        //console.log(num);
         quizStart(num);
     });
 }
